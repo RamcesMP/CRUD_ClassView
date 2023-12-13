@@ -1,0 +1,11 @@
+{% extends 'core/base.html' %}
+{% block content %}
+
+<h1>Agregar</h1>
+Seguro desea eliminar {{estudiante.nombre}}
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="si "> <a href="{% url 'home' %}">no</a>
+</form>
+
+{% endblock %}

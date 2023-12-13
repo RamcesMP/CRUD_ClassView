@@ -1,0 +1,15 @@
+
+class EstudianteDetailView(DetailView):
+    model = Estudiante
+    template_name = 'libros_detail.html'
+
+class EstudianteUpdateView(UpdateView):
+    model = Libro
+    template_name = 'libros_update.html'
+    fields = ['titulo', 'autor', 'genero', 'descripcion']
+    success_url = '/libros/'
+
+class EstudianteDeleteView(DeleteView):
+    model = Estudiante
+    template_name = 'libros_delete.html'
+    success_url = '/libros/'

@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+{% block content %}
+
+<h1>Home</h1>
+
+<a href="{% url 'agregar' %}">agregar</a>
+<br><br>
+{% for estudiante in estudiante_list %}
+    {{estudiante.nombre}} <br> 
+    {{estudiante.apellido}} 
+    <br>
+    <a href="{% url 'ver' estudiante.id %}">ver</a>
+    
+    <a href="{% url 'editar' estudiante.id %}">editar</a>
+    <a href="{% url 'eliminar' estudiante.id %}">eliminar</a>
+    <br>
+{% endfor %}
+
+{% endblock %}
